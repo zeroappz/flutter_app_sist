@@ -31,6 +31,7 @@ class SathyabamaMobileApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: StringConstants.appName,
       theme: ThemeData(
         primarySwatch: ColorConstants.primaryColor,
