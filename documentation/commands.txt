@@ -1,0 +1,18 @@
+dart format .
+dart fix --dry-run // to know the problems can be fixed using this command
+dart fix --apply // to fix the problems identified by dart analyze
+
+
+Git Commands:
+1. git init
+2. git add . --all
+3. git commit -m "[Category]: Message"             ----- Feat, Chore, Prod, Bug, Update
+
+
+Extensions:
+1. Git Graph
+2. Code Runner
+3. Dart
+4. IntelliCode
+5. Flutter
+6. Live Server
