@@ -1,0 +1,22 @@
+{
+    "first_name":"Praveen",
+    "last_name": "Kumar",
+    "address": {
+        "home": {
+            "address_line_1": "ABC Street",
+            "address_line_2": "XYZ Colony",
+            "city": "Bangalore",
+            "state": "Karnataka",
+            "pin_code": 560001
+        },
+        "work": {
+            "address_line_1": "ABC Street",
+            "address_line_2": "XYZ Colony",
+            "city": "Bangalore",
+            "state": "Karnataka",
+            "pin_code": 560001
+        }
+    },
+    "email": "pravileaf@gmail.com",
+    "phone_numbers":["9047048344", "8190081187"]
+}
