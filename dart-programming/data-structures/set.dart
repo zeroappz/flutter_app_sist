@@ -33,10 +33,10 @@ main() {
     var objDouble = double.parse('1');
     print(objDouble.runtimeType);
 
-    Set _result;
+    Set result;
     List objList = ['Praveen', 'Ramu', 'Tanya', 'Vamsi'];
-    _result = objList.toSet();
-    print(_result.runtimeType);
+    result = objList.toSet();
+    print(result.runtimeType);
 
     print("Set has a value name ${setObj.elementAt(0)}");
   }
