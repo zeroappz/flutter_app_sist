@@ -46,7 +46,10 @@ class _SplashScreenState extends State<SplashScreen> {
       // Navigate to the home screen after 2 seconds
       await Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const OnBoardingScreen()),
+        MaterialPageRoute(
+            builder: (context) =>
+                // const GalleryScreen()),
+                const OnBoardingScreen()),
       );
     });
   }

@@ -7,4 +7,18 @@ export '../screens/init_screens/splash.dart'; // Splash Import
 export '../global_constants/values.dart'; // Library File that takes care of teh global constant file
 export '../global_widgets/global_widgets.dart'; // Library File that takes care of teh global constant file
 export '../screens/onboard_screen/on_board.dart'; // Onboard Import
+
+/// Models
 export '../model/on_board_model.dart'; // Onboard Import
+export '../model/file_model.dart'; // File Import
+
+/// Gallery Files Import
+export '../screens/gallery/gallery.dart'; // Gallery Import
+export '../screens/gallery/audio.dart'; // Audio Import
+export '../screens/gallery/files.dart'; // Files Import
+export '../screens/gallery/video.dart'; // Video Import
+export '../screens/gallery/images.dart'; // Images Import
+
+/// Third-Party Packages
+export 'package:flutter_storage_path/flutter_storage_path.dart';
+export 'package:permission_handler/permission_handler.dart';
