@@ -10,27 +10,42 @@ class GalleryScreen extends StatefulWidget {
 class _GalleryScreenState extends State<GalleryScreen> {
   // late final Permission _permission;
   // PermissionStatus _permissionStatus = PermissionStatus.denied;
+  late bool permissionGranted;
 
   @override
   void initState() {
     super.initState();
     debugPrint("********* Init State ***********");
-    getPermission();
+    _getStoragePermission();
   }
 
-  Future<void> getPermission() async {
-    // final status = await _permission.status;
-    // setState(() => _permissionStatus = status);
-
-    final permissionStatus = Permission.storage.status;
-    debugPrint(permissionStatus.isDenied.toString());
-    if (permissionStatus.isDenied == false) {
-      await Permission.storage.request();
-    } else if (permissionStatus.isPermanentlyDenied == true) {
-      await openAppSettings();
+  Future<void> _getStoragePermission() async {
+    DeviceInfoPlugin plugin = DeviceInfoPlugin();
+    AndroidDeviceInfo android = await plugin.androidInfo;
+    if (android.version.sdkInt! < 33) {
+      if (await Permission.storage.request().isGranted) {
+        setState(() {
+          permissionGranted = true;
+        });
+      } else if (await Permission.storage.request().isPermanentlyDenied) {
+        await openAppSettings();
+      } else if (await Permission.audio.request().isDenied) {
+        setState(() {
+          permissionGranted = false;
+        });
+      }
     } else {
-      debugPrint("Not trusted us to provide Storage Access");
-      await Permission.storage.request();
+      if (await Permission.photos.request().isGranted) {
+        setState(() {
+          permissionGranted = true;
+        });
+      } else if (await Permission.photos.request().isPermanentlyDenied) {
+        await openAppSettings();
+      } else if (await Permission.photos.request().isDenied) {
+        setState(() {
+          permissionGranted = false;
+        });
+      }
     }
   }
 

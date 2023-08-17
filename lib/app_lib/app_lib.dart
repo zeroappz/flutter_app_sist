@@ -18,7 +18,9 @@ export '../screens/gallery/audio.dart'; // Audio Import
 export '../screens/gallery/files.dart'; // Files Import
 export '../screens/gallery/video.dart'; // Video Import
 export '../screens/gallery/images.dart'; // Images Import
+export '../screens/gallery/file_storage.dart'; // Images Import
 
 /// Third-Party Packages
 export 'package:flutter_storage_path/flutter_storage_path.dart';
 export 'package:permission_handler/permission_handler.dart';
+export 'package:device_info_plus/device_info_plus.dart';
