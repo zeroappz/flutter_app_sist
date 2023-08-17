@@ -10,50 +10,50 @@ class GalleryScreen extends StatefulWidget {
 class _GalleryScreenState extends State<GalleryScreen> {
   // late final Permission _permission;
   // PermissionStatus _permissionStatus = PermissionStatus.denied;
-  late bool permissionGranted;
+  // late bool permissionGranted;
 
   @override
   void initState() {
     super.initState();
     debugPrint("********* Init State ***********");
-    _getStoragePermission();
+    // _getStoragePermission();
   }
 
-  Future<void> _getStoragePermission() async {
-    DeviceInfoPlugin plugin = DeviceInfoPlugin();
-    AndroidDeviceInfo android = await plugin.androidInfo;
-    if (android.version.sdkInt! < 33) {
-      if (await Permission.storage.request().isGranted) {
-        setState(() {
-          permissionGranted = true;
-        });
-      } else if (await Permission.storage.request().isPermanentlyDenied) {
-        await openAppSettings();
-      } else if (await Permission.audio.request().isDenied) {
-        setState(() {
-          permissionGranted = false;
-        });
-      }
-    } else {
-      if (await Permission.photos.request().isGranted) {
-        setState(() {
-          permissionGranted = true;
-        });
-      } else if (await Permission.photos.request().isPermanentlyDenied) {
-        await openAppSettings();
-      } else if (await Permission.photos.request().isDenied) {
-        setState(() {
-          permissionGranted = false;
-        });
-      }
-    }
-  }
+  // Future<void> _getStoragePermission() async {
+  //   DeviceInfoPlugin plugin = DeviceInfoPlugin();
+  //   AndroidDeviceInfo android = await plugin.androidInfo;
+  //   if (android.version.sdkInt! < 33) {
+  //     if (await Permission.storage.request().isGranted) {
+  //       setState(() {
+  //         permissionGranted = true;
+  //       });
+  //     } else if (await Permission.storage.request().isPermanentlyDenied) {
+  //       await openAppSettings();
+  //     } else if (await Permission.audio.request().isDenied) {
+  //       setState(() {
+  //         permissionGranted = false;
+  //       });
+  //     }
+  //   } else {
+  //     if (await Permission.photos.request().isGranted) {
+  //       setState(() {
+  //         permissionGranted = true;
+  //       });
+  //     } else if (await Permission.photos.request().isPermanentlyDenied) {
+  //       await openAppSettings();
+  //     } else if (await Permission.photos.request().isDenied) {
+  //       setState(() {
+  //         permissionGranted = false;
+  //       });
+  //     }
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
     /// DefaultTabController - Total Number of Tabs that we are going to use it in the scree
     return DefaultTabController(
-      length: 4, // length of the TC should meet the total number of Tabs
+      length: 3, // length of the TC should meet the total number of Tabs
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
@@ -61,27 +61,30 @@ class _GalleryScreenState extends State<GalleryScreen> {
             child: Text(
               'Gallery',
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: SizeConstants.fontSize),
+              style: TextStyle(fontSize: SizeConstants.xxfontSize),
             ),
           ),
           bottom: const TabBar(
             indicatorColor: Colors.white,
             indicatorSize: TabBarIndicatorSize.tab,
             labelPadding: EdgeInsets.only(bottom: 15.0),
+            // padding: EdgeInsets.only(top: 15),
             tabs: <Widget>[
-              Text('Images'),
-              Text('Files'),
-              Text('Audio'),
-              Text('Video'),
+              Text('Basic Grid'),
+              Text('Dynamic Grid'),
+              Text('Sliver Grid'),
             ],
           ),
         ),
         body: const TabBarView(
           children: <Widget>[
-            ImageGallery(),
-            FilesGallery(),
-            AudioGallery(),
-            VideosGallery(),
+            // ImageGallery(),
+            // FilesGallery(),
+            // AudioGallery(),
+            // VideosGallery(),
+            BasicGridView(),
+            StaggeredGridView(),
+            DynamicGridView(),
           ],
         ),
       ),
