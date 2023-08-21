@@ -12,8 +12,8 @@ class FileModel {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = {};
-    data['files'] = this.files;
-    data['folderName'] = this.folder;
+    data['files'] = files;
+    data['folderName'] = folder;
     return data;
   }
 }
@@ -34,11 +34,11 @@ class Files {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['mimeType'] = this.mimeType;
-    data['size'] = this.size;
-    data['title'] = this.title;
-    data['path'] = this.path;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['mimeType'] = mimeType;
+    data['size'] = size;
+    data['title'] = title;
+    data['path'] = path;
     return data;
   }
 }

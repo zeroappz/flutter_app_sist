@@ -5,7 +5,7 @@ class BasicGridView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<String> _imgList = ImagePath.imgList;
+    List<String> imgList = ImagePath.imgList;
 
     return GridView.builder(
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -13,7 +13,7 @@ class BasicGridView extends StatelessWidget {
         mainAxisSpacing: 5,
         crossAxisSpacing: 5,
       ),
-      itemCount: _imgList.length,
+      itemCount: imgList.length,
       itemBuilder: (BuildContext context, int index) {
         /// Any Widget can be converted into an action performing widget using
         /// InkWell & GestureDetector
@@ -26,18 +26,18 @@ class BasicGridView extends StatelessWidget {
               width: double.infinity,
               fit: BoxFit.cover,
               image: NetworkImage(
-                _imgList[index],
+                imgList[index],
               ),
             ),
           ),
           onTap: () {
             debugPrint(
-                "Gesture Detected with OnTap action.. ${_imgList[index]} is getting opened");
+                "Gesture Detected with OnTap action.. ${imgList[index]} is getting opened");
             Navigator.push(
               context,
               MaterialPageRoute(
                 builder: (_) {
-                  return ImageDetailsScreen(_imgList[index]);
+                  return ImageDetailsScreen(imgList[index]);
                 },
               ),
             );

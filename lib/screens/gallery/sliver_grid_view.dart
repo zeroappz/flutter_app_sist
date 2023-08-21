@@ -8,7 +8,7 @@ class StaggeredGridView extends StatefulWidget {
 }
 
 class _StaggeredGridViewState extends State<StaggeredGridView> {
-  List<String> _imgList = ImagePath.imgList;
+  final List<String> _imgList = ImagePath.imgList;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class _StaggeredGridViewState extends State<StaggeredGridView> {
       crossAxisSpacing: 5,
       itemCount: _imgList.length,
       itemBuilder: (BuildContext context, index) {
-        var _height = Random().nextInt(200) + 150;
+        var height = Random().nextInt(200) + 150;
         return GestureDetector(
           child:Card(
           elevation: (Random().nextInt(20) + 10).toDouble(),
@@ -30,7 +30,7 @@ class _StaggeredGridViewState extends State<StaggeredGridView> {
           child: Padding(
             padding: const EdgeInsets.all(5.0),
             child: Image(
-              height: _height.toDouble(),
+              height: height.toDouble(),
               fit: BoxFit.cover,
               image: NetworkImage(
                 _imgList[index],

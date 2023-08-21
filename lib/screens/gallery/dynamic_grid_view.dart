@@ -8,7 +8,7 @@ class DynamicGridView extends StatefulWidget {
 }
 
 class _DynamicGridViewState extends State<DynamicGridView> {
-  List<String> _imgList = ImagePath.imgList;
+  final List<String> _imgList = ImagePath.imgList;
 
   @override
   Widget build(BuildContext context) {

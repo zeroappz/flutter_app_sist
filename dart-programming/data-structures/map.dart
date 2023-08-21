@@ -5,7 +5,7 @@ main() {
   var mapVarObj = {};
 
   /// Type Specified Map Object
-  Map<String, dynamic> mapObject = Map();
+  Map<String, dynamic> mapObject = {};
 
   /// Add key:value pairs
   mapVarObj["first_name"] = "Praveen";

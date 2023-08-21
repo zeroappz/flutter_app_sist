@@ -16,12 +16,7 @@ main() {
   /// Ctrl + Alt + N
   print(obj);
   print(
-    name +
-        " " +
-        myAge.toString() +
-        " years old" +
-        " Earning " +
-        salary.toString(),
+    "$name $myAge years old Earning $salary",
   );
 
   /// Interpolation can be done using $

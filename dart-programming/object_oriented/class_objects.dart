@@ -15,7 +15,7 @@ class ClassNameForLearning {
   /// Constructors
   ClassNameForLearning(bd) {
     print("Constructor Loads First");
-    this.brand = bd; // Instance Object
+    brand = bd; // Instance Object
     _getData();
     print("Constructor: My $watchType is of $brand");
   }
