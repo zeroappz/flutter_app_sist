@@ -17,16 +17,30 @@ class _DynamicGridViewState extends State<DynamicGridView> {
         SliverGrid(
           delegate: SliverChildBuilderDelegate(
             (BuildContext context, int index) {
-              return ClipRRect(
-                borderRadius: BorderRadius.circular(12.0),
-                child: Image(
-                  height: double.infinity,
-                  width: double.infinity,
-                  fit: BoxFit.cover,
-                  image: NetworkImage(
-                    _imgList[index],
+              return GestureDetector(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(12.0),
+                  child: Image(
+                    height: double.infinity,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                    image: NetworkImage(
+                      _imgList[index],
+                    ),
                   ),
                 ),
+                onTap: () {
+                  // debugPrint(
+                  //     "Gesture Detected with OnTap action.. ${_imgList[index]} is getting opened");
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) {
+                        return ImageDetailsScreen(_imgList[index]);
+                      },
+                    ),
+                  );
+                },
               );
             },
           ),

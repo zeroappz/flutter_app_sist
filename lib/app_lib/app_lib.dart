@@ -23,9 +23,11 @@ export '../screens/gallery/file_storage.dart'; // Images Import
 export '../screens/gallery/grid_view.dart';
 export '../screens/gallery/dynamic_grid_view.dart';
 export '../screens/gallery/sliver_grid_view.dart';
+export '../screens/gallery/image_detail.dart';
 
 /// Third-Party Packages
 export 'package:flutter_storage_path/flutter_storage_path.dart';
 // export 'package:permission_handler/permission_handler.dart';
 // export 'package:device_info_plus/device_info_plus.dart';
 export 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+export 'package:cached_network_image/cached_network_image.dart';

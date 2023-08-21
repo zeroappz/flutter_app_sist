@@ -19,7 +19,8 @@ class _StaggeredGridViewState extends State<StaggeredGridView> {
       itemCount: _imgList.length,
       itemBuilder: (BuildContext context, index) {
         var _height = Random().nextInt(200) + 150;
-        return Card(
+        return GestureDetector(
+          child:Card(
           elevation: (Random().nextInt(20) + 10).toDouble(),
           // shadowColor: Colors.lightGreenAccent.withOpacity(0.2),
           shape: RoundedRectangleBorder(
@@ -36,6 +37,19 @@ class _StaggeredGridViewState extends State<StaggeredGridView> {
               ),
             ),
           ),
+          ),
+           onTap: () {
+            debugPrint(
+                "Gesture Detected with OnTap action.. ${_imgList[index]} is getting opened");
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) {
+                  return ImageDetailsScreen(_imgList[index]);
+                },
+              ),
+            );
+          },
         );
       },
     );
