@@ -11,6 +11,9 @@ class _SignInScreenState extends State<SignInScreen> {
   IconData _iconVisible = Icons.visibility_off;
   bool _obscureText = true;
 
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
   void _toggleObscureText() {
     setState(() {
       _obscureText = !_obscureText;
@@ -103,7 +106,8 @@ class _SignInScreenState extends State<SignInScreen> {
                         const SizedBox(
                           height: 20,
                         ),
-                        const TextField(
+                        TextField(
+                          controller: emailController,
                           keyboardType: TextInputType.emailAddress,
                           decoration: InputDecoration(
                             focusedBorder: UnderlineInputBorder(
@@ -119,6 +123,7 @@ class _SignInScreenState extends State<SignInScreen> {
                           height: 20,
                         ),
                         TextField(
+                          controller: passwordController,
                           obscureText: _obscureText,
                           decoration: InputDecoration(
                             focusedBorder: const UnderlineInputBorder(
@@ -145,6 +150,10 @@ class _SignInScreenState extends State<SignInScreen> {
                         ElevatedButton(
                           onPressed: () {
                             debugPrint('Login Pressed');
+                            debugPrint(emailController.text);
+                            debugPrint(passwordController.text);
+                            loginValidation(
+                                emailController.text, passwordController.text);
                           },
                           style: ButtonStyle(
                             backgroundColor: MaterialStateProperty.all(
@@ -189,5 +198,43 @@ class _SignInScreenState extends State<SignInScreen> {
         ),
       ),
     );
+  }
+
+  loginValidation(email, password) {
+    var existingEmail = "pravileaf@gmail.com";
+    var existingPwd = "123456";
+
+    /// Validating user login
+    if (email == existingEmail && password == existingPwd) {
+      /// AlertDialog()
+      /// debugPrint("Login Successful");
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (_) {
+            return GalleryScreen();
+          },
+        ),
+      );
+      Fluttertoast.showToast(
+        msg: "Login Successful",
+        toastLength: Toast.LENGTH_LONG,
+        gravity: ToastGravity.CENTER,
+      );
+    } else {
+      Fluttertoast.showToast(
+        msg: "Enter Valid Credentials",
+        toastLength: Toast.LENGTH_LONG,
+        gravity: ToastGravity.CENTER,
+      );
+
+      showDialog(
+          context: context,
+          builder: (context) {
+            return const AlertDialog(
+              content: Text("Please provide valid credentials"),
+            );
+          });
+    }
   }
 }

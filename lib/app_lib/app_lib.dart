@@ -35,3 +35,4 @@ export 'package:flutter_storage_path/flutter_storage_path.dart';
 // export 'package:device_info_plus/device_info_plus.dart';
 export 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 export 'package:cached_network_image/cached_network_image.dart';
+export 'package:fluttertoast/fluttertoast.dart';
