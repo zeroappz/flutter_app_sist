@@ -2,6 +2,7 @@
 export 'dart:async';
 export 'dart:math';
 export 'package:flutter/services.dart';
+export 'package:flutter/foundation.dart';
 
 // Exporting Paths
 export 'package:flutter/material.dart'; // Imports the Material library from Flutter framework - Android
@@ -33,10 +34,13 @@ export '../screens/auth/sign_up.dart';
 export '../screens/auth/forgot_password.dart';
 export '../screens/auth/contact_us.dart';
 
+/// Generic Screens
+export '../screens/generic_screens/device_info.dart';
+
 /// Third-Party Packages
 export 'package:flutter_storage_path/flutter_storage_path.dart';
 // export 'package:permission_handler/permission_handler.dart';
-// export 'package:device_info_plus/device_info_plus.dart';
+export 'package:device_info_plus/device_info_plus.dart';
 export 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 export 'package:cached_network_image/cached_network_image.dart';
 export 'package:fluttertoast/fluttertoast.dart';

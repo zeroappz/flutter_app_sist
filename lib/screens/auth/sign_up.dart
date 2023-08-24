@@ -4,7 +4,7 @@ class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
 
   @override
-  _SignUpScreenState createState() => _SignUpScreenState();
+  State<SignUpScreen> createState() => _SignUpScreenState();
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
@@ -127,6 +127,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         ),
                         TextField(
                           keyboardType: TextInputType.emailAddress,
+                          controller: emailController,
                           decoration: InputDecoration(
                               focusedBorder: UnderlineInputBorder(
                                   borderSide:
@@ -182,14 +183,19 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 )),
                               ),
                               onPressed: () {
-                                Fluttertoast.showToast(
-                                    msg: 'Click create account',
-                                    toastLength: Toast.LENGTH_SHORT);
+                                debugPrint("**********");
+                                debugPrint(
+                                    "${passwordController.text} ${userNameController.text} ${emailController.text} ${phoneController.text}");
+                                debugPrint("**********");
+                                // Fluttertoast.showToast(
+                                //     msg: 'Click create account',
+                                //     toastLength: Toast.LENGTH_SHORT);
                                 signUp(
-                                    emailController.text,
-                                    passwordController.text,
-                                    userNameController.text,
-                                    phoneController.text);
+                                  passwordController.text,
+                                  userNameController.text,
+                                  emailController.text,
+                                  phoneController.text,
+                                );
                               },
                               child: const Padding(
                                 padding: EdgeInsets.symmetric(vertical: 5),
@@ -245,13 +251,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
     );
   }
 
-  signUp(email, password, username, phone) {
+  signUp(password, username, email, phone) {
+    debugPrint("$email $password $username $phone");
+
     /// Validating user login
     if (email.isNotEmpty &&
         password.isNotEmpty &&
         username.isNotEmpty &&
         phone.isNotEmpty) {
       debugPrint("Sign Up Successful");
+
       Navigator.push(
         context,
         MaterialPageRoute(
@@ -274,13 +283,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
       /// Existing Email
       /// Both Passwords are not Matched
-      showDialog(
-          context: context,
-          builder: (context) {
-            return const AlertDialog(
-              content: Text("Please provide valid credentials"),
-            );
-          });
+      // showDialog(
+      //     context: context,
+      //     builder: (context) {
+      //       return const AlertDialog(
+      //         content: Text("Please provide valid credentials"),
+      //       );
+      //     });
     }
   }
 }

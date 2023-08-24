@@ -9,11 +9,12 @@ class SignInScreen extends StatefulWidget {
 
 class _SignInScreenState extends State<SignInScreen> {
   IconData _iconVisible = Icons.visibility_off;
-  bool _obscureText = true;
+  bool _obscureText = true; // Hide the context
 
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
+  /// Is to hide the information provided
   void _toggleObscureText() {
     setState(() {
       _obscureText = !_obscureText;
@@ -279,14 +280,14 @@ class _SignInScreenState extends State<SignInScreen> {
         toastLength: Toast.LENGTH_LONG,
         gravity: ToastGravity.CENTER,
       );
-
-      showDialog(
-          context: context,
-          builder: (context) {
-            return const AlertDialog(
-              content: Text("Please provide valid credentials"),
-            );
-          });
+      // showDialog(
+      //   context: context,
+      //   builder: (context) {
+      //     return const AlertDialog(
+      //       content: Text("Please provide valid credentials"),
+      //     );
+      //   },
+      // );
     }
   }
 }
