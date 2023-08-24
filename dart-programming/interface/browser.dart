@@ -9,10 +9,6 @@ class Browser extends Advertisements {
   }
 }
 
-
-
-
-
 // class Browser {
 //   // void openUrl(String url) {
 //   //   print(url);

@@ -109,7 +109,7 @@ class _SignInScreenState extends State<SignInScreen> {
                         TextField(
                           controller: emailController,
                           keyboardType: TextInputType.emailAddress,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             focusedBorder: UnderlineInputBorder(
                               borderSide: BorderSide(
                                 color: ColorConstants.primaryColor,
@@ -173,7 +173,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       const Text("Don't have an account?"),
                       GestureDetector(
                         child: const Text(
-                          'Sign Up',
+                          ' Sign Up',
                           style: TextStyle(
                             color: ColorConstants.primaryColor,
                           ),
@@ -184,6 +184,58 @@ class _SignInScreenState extends State<SignInScreen> {
                             MaterialPageRoute(
                               builder: (_) {
                                 return const SignUpScreen();
+                              },
+                            ),
+                          );
+                        },
+                      )
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 20),
+                Center(
+                  child: Wrap(
+                    children: [
+                      const Text("Forgot Password"),
+                      GestureDetector(
+                        child: const Text(
+                          ' Forgot Password!',
+                          style: TextStyle(
+                            color: ColorConstants.primaryColor,
+                          ),
+                        ),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) {
+                                return const ForgotPasswordScreen();
+                              },
+                            ),
+                          );
+                        },
+                      )
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 60),
+                Center(
+                  child: Wrap(
+                    children: [
+                      const Text("To contact support"),
+                      GestureDetector(
+                        child: const Text(
+                          ' Support',
+                          style: TextStyle(
+                            color: ColorConstants.primaryColor,
+                          ),
+                        ),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) {
+                                return const ContactUsScreen();
                               },
                             ),
                           );
@@ -212,7 +264,7 @@ class _SignInScreenState extends State<SignInScreen> {
         context,
         MaterialPageRoute(
           builder: (_) {
-            return GalleryScreen();
+            return const GalleryScreen();
           },
         ),
       );

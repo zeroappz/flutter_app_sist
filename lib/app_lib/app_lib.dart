@@ -1,6 +1,8 @@
 /// Dart Packages
 export 'dart:async';
 export 'dart:math';
+export 'package:flutter/services.dart';
+
 // Exporting Paths
 export 'package:flutter/material.dart'; // Imports the Material library from Flutter framework - Android
 export '../screens/init_screens/init.dart'; // Init Screen
@@ -28,6 +30,8 @@ export '../screens/gallery/image_detail.dart';
 /// Auth Screens
 export '../screens/auth/sign_in.dart';
 export '../screens/auth/sign_up.dart';
+export '../screens/auth/forgot_password.dart';
+export '../screens/auth/contact_us.dart';
 
 /// Third-Party Packages
 export 'package:flutter_storage_path/flutter_storage_path.dart';
