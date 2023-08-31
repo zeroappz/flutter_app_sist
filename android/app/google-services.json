@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "595356169072",
+    "project_id": "sathyabama-univ",
+    "storage_bucket": "sathyabama-univ.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:595356169072:android:418ca6ca6e6430dfc0d5b5",
+        "android_client_info": {
+          "package_name": "com.sathyabama.flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "595356169072-j3i6ig732al2q8gaiobcrcuurvonfr9b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6wotnuo6g-llwRMTmNB2cpSfSNGo1AVQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "595356169072-j3i6ig732al2q8gaiobcrcuurvonfr9b.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "595356169072-g8dn1an4dobob4vhbchnblu0kur6nndq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.sathyabama.flutter"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

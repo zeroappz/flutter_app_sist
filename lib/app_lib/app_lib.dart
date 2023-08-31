@@ -5,7 +5,10 @@ export 'package:flutter/services.dart';
 export 'package:flutter/foundation.dart';
 
 // Exporting Paths
-export 'package:flutter/material.dart'; // Imports the Material library from Flutter framework - Android
+export 'package:flutter/material.dart'
+    hide
+        RefreshCallback; // Imports the Material library from Flutter framework - Android
+export 'package:flutter/cupertino.dart';
 export '../screens/init_screens/init.dart'; // Init Screen
 export '../screens/init_screens/splash.dart'; // Splash Import
 export '../global_constants/values.dart'; // Library File that takes care of teh global constant file
@@ -44,3 +47,6 @@ export 'package:device_info_plus/device_info_plus.dart';
 export 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 export 'package:cached_network_image/cached_network_image.dart';
 export 'package:fluttertoast/fluttertoast.dart';
+
+/// iOS Widgets Screens
+export '../screens/ios_screens/ios_widgets.dart';

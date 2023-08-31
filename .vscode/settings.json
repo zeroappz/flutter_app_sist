@@ -8,5 +8,6 @@
         "Praveen",
         "Sathyabama"
     ],
-    "docwriter.hotkey.windows": "Alt + ."
+    "docwriter.hotkey.windows": "Alt + .",
+    "java.configuration.updateBuildConfiguration": "automatic"
 }

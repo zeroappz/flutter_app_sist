@@ -170,17 +170,17 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                               msg: 'Click email',
                               toastLength: Toast.LENGTH_SHORT);
                         },
-                        child: Row(
+                        child: const Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            const Icon(
+                            Icon(
                               Icons.email,
                               color: ColorConstants.primaryColor,
                             ),
-                            const SizedBox(width: 10),
+                            SizedBox(width: 10),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              children: const <Widget>[
+                              children: <Widget>[
                                 Text('Email'),
                                 SizedBox(height: 5),
                                 Text(
@@ -200,15 +200,15 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                               msg: 'Click phone number',
                               toastLength: Toast.LENGTH_SHORT);
                         },
-                        child: Row(
+                        child: const Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            const Icon(Icons.phone_android,
+                            Icon(Icons.phone_android,
                                 color: ColorConstants.primaryColor),
-                            const SizedBox(width: 10),
+                            SizedBox(width: 10),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              children: const <Widget>[
+                              children: <Widget>[
                                 Text('Phone'),
                                 SizedBox(height: 5),
                                 Text(

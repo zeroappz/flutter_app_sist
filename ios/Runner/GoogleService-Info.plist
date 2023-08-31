@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>595356169072-g8dn1an4dobob4vhbchnblu0kur6nndq.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.595356169072-g8dn1an4dobob4vhbchnblu0kur6nndq</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBr9dhI4FxJzOMRvXJ__SFMBTrMH2bXG9w</string>
+	<key>GCM_SENDER_ID</key>
+	<string>595356169072</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.sathyabama.flutter</string>
+	<key>PROJECT_ID</key>
+	<string>sathyabama-univ</string>
+	<key>STORAGE_BUCKET</key>
+	<string>sathyabama-univ.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:595356169072:ios:97ef06e6fdaaab4bc0d5b5</string>
+</dict>
+</plist>

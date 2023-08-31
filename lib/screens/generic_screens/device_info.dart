@@ -30,25 +30,27 @@ class _DeviceInformationState extends State<DeviceInformation> {
     /// Global Flutter constant
     /// kIsWeb, kDebugMode...
     try {
-      if (kIsWeb) {
-        deviceInfo = _readWebBrowserInfo(await deviceInfoPlugin.webBrowserInfo);
-        // deviceData = "Web Platform";
-      } else {
-        if (TargetPlatform.android.name == "android") {
-          deviceInfo =
-              _readAndroidBuildData(await deviceInfoPlugin.androidInfo);
-        } else if (TargetPlatform.linux.name == 'linux') {
-          _readLinuxDeviceInfo(await deviceInfoPlugin.linuxInfo);
-        } else if (TargetPlatform.iOS.name == 'iOS') {
-          _readIosDeviceInfo(await deviceInfoPlugin.iosInfo);
-        } else if (TargetPlatform.macOS.name == 'macOS') {
-          _readMacOsDeviceInfo(await deviceInfoPlugin.macOsInfo);
-        } else if (TargetPlatform.windows.name == 'iOS') {
-          _readWindowsDeviceInfo(await deviceInfoPlugin.windowsInfo);
-        } else {
-          debugPrint("Failed to get th Platform Information");
-        }
-      }
+      deviceInfo = _readIosDeviceInfo(await deviceInfoPlugin.iosInfo);
+      // if (kIsWeb) {
+      //   deviceInfo = _readWebBrowserInfo(await deviceInfoPlugin.webBrowserInfo);
+      //   // deviceData = "Web Platform";
+      // } else {
+      //   if (TargetPlatform.android.name == "android") {
+      //     deviceInfo =
+      //         _readAndroidBuildData(await deviceInfoPlugin.androidInfo);
+      //   } else if (TargetPlatform.linux.name == 'linux') {
+      //     deviceInfo = _readLinuxDeviceInfo(await deviceInfoPlugin.linuxInfo);
+      //   } else if (TargetPlatform.iOS.name == 'iOS') {
+      //     deviceInfo = _readIosDeviceInfo(await deviceInfoPlugin.iosInfo);
+      //   } else if (TargetPlatform.macOS.name == 'macOS') {
+      //     deviceInfo = _readMacOsDeviceInfo(await deviceInfoPlugin.macOsInfo);
+      //   } else if (TargetPlatform.windows.name == 'windows') {
+      //     deviceInfo =
+      //         _readWindowsDeviceInfo(await deviceInfoPlugin.windowsInfo);
+      //   } else {
+      //     debugPrint("Failed to get th Platform Information");
+      //   }
+      // }
     } on PlatformException {
       deviceInfo = <String, dynamic>{
         'Error:': 'Failed to get platform version.'
@@ -210,6 +212,5 @@ class _DeviceInformationState extends State<DeviceInformation> {
     );
   }
 
-  String _getAppBarTitle() =>
-      kIsWeb ? 'Web Platform info' : 'Android Device Info';
+  String _getAppBarTitle() => kIsWeb ? 'Web Platform info' : 'iOS Device Info';
 }
