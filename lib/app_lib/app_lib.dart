@@ -39,6 +39,7 @@ export '../screens/auth/contact_us.dart';
 
 /// Generic Screens
 export '../screens/generic_screens/device_info.dart';
+export '../repository/video_lib.dart';
 
 /// Third-Party Packages
 export 'package:flutter_storage_path/flutter_storage_path.dart';
@@ -47,6 +48,7 @@ export 'package:device_info_plus/device_info_plus.dart';
 export 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 export 'package:cached_network_image/cached_network_image.dart';
 export 'package:fluttertoast/fluttertoast.dart';
+export 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 /// iOS Widgets Screens
 export '../screens/ios_screens/ios_widgets.dart';
