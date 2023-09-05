@@ -43,9 +43,9 @@ class SathyabamaMobileApp extends StatelessWidget {
       // Class(title: 'parameter')
       // home: const SplashScreen(),
       // home: const GalleryScreen(),
-      // home: const SignInScreen(),
+      home: const SignInScreen(),
       // home: const DeviceInformation(),
-      home: VideoplayerScreen(),
+      // home: VideoplayerScreen(),
     );
   }
 }

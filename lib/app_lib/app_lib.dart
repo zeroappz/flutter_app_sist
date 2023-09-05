@@ -18,6 +18,7 @@ export '../screens/onboard_screen/on_board.dart'; // Onboard Import
 /// Models
 export '../model/on_board_model.dart'; // Onboard Import
 export '../model/file_model.dart'; // File Import
+export '../model/registration_model.dart';
 
 /// Gallery Files Import
 export '../screens/gallery/gallery.dart'; // Gallery Import
@@ -39,7 +40,7 @@ export '../screens/auth/contact_us.dart';
 
 /// Generic Screens
 export '../screens/generic_screens/device_info.dart';
-export '../repository/video_lib.dart';
+export '../screens/gallery/video_lib.dart';
 
 /// Third-Party Packages
 export 'package:flutter_storage_path/flutter_storage_path.dart';
@@ -49,6 +50,12 @@ export 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 export 'package:cached_network_image/cached_network_image.dart';
 export 'package:fluttertoast/fluttertoast.dart';
 export 'package:youtube_player_flutter/youtube_player_flutter.dart';
+export 'package:dio/dio.dart';
+export 'package:shared_preferences/shared_preferences.dart';
 
 /// iOS Widgets Screens
 export '../screens/ios_screens/ios_widgets.dart';
+
+/// Repository & API End-Points
+export '../repository/api_endpoints.dart';
+export '../repository/api_services.dart';

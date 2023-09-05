@@ -1,4 +1,4 @@
-import '../app_lib/app_lib.dart';
+import '../../app_lib/app_lib.dart';
 
 class VideoplayerScreen extends StatefulWidget {
   const VideoplayerScreen({super.key});

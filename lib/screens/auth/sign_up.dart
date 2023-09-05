@@ -1,3 +1,4 @@
+
 import '../../app_lib/app_lib.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -12,9 +13,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
   IconData _iconVisible = Icons.visibility_off;
 
   final emailController = TextEditingController();
-  final userNameController = TextEditingController();
+  final nameController = TextEditingController();
   final passwordController = TextEditingController();
   final phoneController = TextEditingController();
+
+  /// load Api Services
+  ApiService _apiService = ApiService();
 
   void _toggleObscureText() {
     setState(() {
@@ -92,7 +96,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           height: 20,
                         ),
                         TextField(
-                          controller: userNameController,
+                          controller: nameController,
                           keyboardType: TextInputType.text,
                           decoration: InputDecoration(
                               focusedBorder: UnderlineInputBorder(
@@ -185,14 +189,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               onPressed: () {
                                 debugPrint("**********");
                                 debugPrint(
-                                    "${passwordController.text} ${userNameController.text} ${emailController.text} ${phoneController.text}");
+                                    "${passwordController.text} ${nameController.text} ${emailController.text} ${phoneController.text}");
                                 debugPrint("**********");
                                 // Fluttertoast.showToast(
                                 //     msg: 'Click create account',
                                 //     toastLength: Toast.LENGTH_SHORT);
                                 signUp(
                                   passwordController.text,
-                                  userNameController.text,
+                                  nameController.text,
                                   emailController.text,
                                   phoneController.text,
                                 );
@@ -251,14 +255,28 @@ class _SignUpScreenState extends State<SignUpScreen> {
     );
   }
 
-  signUp(password, username, email, phone) {
-    debugPrint("$email $password $username $phone");
-
+  signUp(password, name, email, phone) {
     /// Validating user login
     if (email.isNotEmpty &&
         password.isNotEmpty &&
-        username.isNotEmpty &&
+        name.isNotEmpty &&
         phone.isNotEmpty) {
+      Map<String, dynamic> _postData = {
+        "name": name,
+        "phone": phone,
+        "email": email,
+        "password": password
+      };
+      debugPrint("************");
+      debugPrint(_postData.toString());
+      debugPrint("************");
+
+      /// Post Data for Registration
+      Future<RegistrationModel> output =
+          _apiService.patientRegistration(_postData);
+      debugPrint("***** HTTP ----> *******");
+      debugPrint(output.toString());
+      debugPrint("***** HTTP ----> *******");
       debugPrint("Sign Up Successful");
 
       Navigator.push(

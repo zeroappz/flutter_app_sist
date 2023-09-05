@@ -18,3 +18,11 @@ Extensions:
 4. IntelliCode
 5. Flutter
 6. Live Server
+
+
+SERVERS DATA - CONNECTIVITY
+
+Api End Points - https://domain.com/api/
+What kind of methods - POST, GET, DELETE, PUT
+
+

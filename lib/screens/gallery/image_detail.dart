@@ -1,4 +1,3 @@
-import '../../app_lib/app_lib.dart';
 
 class ImageDetailsScreen extends StatefulWidget {
   final String imgUrl;
