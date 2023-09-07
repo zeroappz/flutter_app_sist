@@ -14,12 +14,16 @@ class ApiService {
       debugPrint(response.toString());
       debugPrint(response.statusCode.toString());
 
-      /// https://api.kirthikadentalcare.in/api/patient_registration
+      /// https://api.kirthikadentalcare.in/api/patient_registration || SSL
       if (response.statusCode == 200) {
-        debugPrint(response.data.toString());
-        return RegistrationModel.fromJson(response.data);
+        if (response.data['status'] == true) {
+          debugPrint(response.data.toString());
+          return RegistrationModel.fromJson(response.data);
+        } else {
+          return RegistrationModel.fromJson(response.data);
+        }
       } else {
-        throw Exception('Registartion Failed');
+        throw Exception('Registration Failed');
       }
     } catch (errObj) {
       debugPrint(errObj.toString());

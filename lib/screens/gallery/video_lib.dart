@@ -48,11 +48,11 @@ class _VideoplayerScreenState extends State<VideoplayerScreen> {
       body: ListView.builder(
         itemBuilder: (context, index) {
           return Container(
-            margin: EdgeInsets.symmetric(vertical: 6.0),
-            padding: EdgeInsets.all(12.0),
+            margin: const EdgeInsets.symmetric(vertical: 6.0),
+            padding: const EdgeInsets.all(12.0),
             child: YoutubePlayer(
               controller: _controllers[index],
-              actionsPadding: EdgeInsets.only(left: 16.0),
+              actionsPadding: const EdgeInsets.only(left: 16.0),
               key: ObjectKey(_controllers[index]),
               bottomActions: [
                 CurrentPosition(),

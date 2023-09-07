@@ -17,12 +17,12 @@ class RegistrationModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
-    data['name'] = this.name;
-    data['phone'] = this.phone;
-    data['email'] = this.email;
-    data['password'] = this.password;
-    data['status'] = this.status;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['name'] = name;
+    data['phone'] = phone;
+    data['email'] = email;
+    data['password'] = password;
+    data['status'] = status;
     return data;
   }
 }

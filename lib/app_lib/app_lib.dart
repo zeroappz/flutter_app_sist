@@ -40,6 +40,7 @@ export '../screens/auth/contact_us.dart';
 
 /// Generic Screens
 export '../screens/generic_screens/device_info.dart';
+export '../screens/generic_screens/generic_screen.dart';
 export '../screens/gallery/video_lib.dart';
 
 /// Third-Party Packages
@@ -52,6 +53,7 @@ export 'package:fluttertoast/fluttertoast.dart';
 export 'package:youtube_player_flutter/youtube_player_flutter.dart';
 export 'package:dio/dio.dart';
 export 'package:shared_preferences/shared_preferences.dart';
+export 'package:maps_launcher/maps_launcher.dart';
 
 /// iOS Widgets Screens
 export '../screens/ios_screens/ios_widgets.dart';

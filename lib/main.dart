@@ -31,21 +31,21 @@ class SathyabamaMobileApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: StringConstants.appName,
-      theme: ThemeData(
-        primarySwatch: ColorConstants.primaryColor,
-      ),
-      // home: const InitialScreen(
-      //   title: StringConstants.appName,
-      //   intObj: 1,
-      // ));
-      // Class(title: 'parameter')
-      // home: const SplashScreen(),
-      // home: const GalleryScreen(),
-      home: const SignInScreen(),
-      // home: const DeviceInformation(),
-      // home: VideoplayerScreen(),
-    );
+        debugShowCheckedModeBanner: false,
+        title: StringConstants.appName,
+        theme: ThemeData(
+          primarySwatch: ColorConstants.primaryColor,
+        ),
+        // home: const InitialScreen(
+        //   title: StringConstants.appName,
+        //   intObj: 1,
+        // ));
+        // Class(title: 'parameter')
+        // home: const SplashScreen(),
+        // home: const GalleryScreen(),
+        // home: const SignInScreen(),
+        // home: const DeviceInformation(),
+        // home: VideoplayerScreen(),
+        home: const GenericScreen());
   }
 }

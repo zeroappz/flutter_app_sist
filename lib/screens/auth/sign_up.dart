@@ -1,4 +1,3 @@
-
 import '../../app_lib/app_lib.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -17,8 +16,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final passwordController = TextEditingController();
   final phoneController = TextEditingController();
 
-  /// load Api Services
-  ApiService _apiService = ApiService();
+  /// load Api Services - Instantiation
+  final ApiService _apiService = ApiService();
 
   void _toggleObscureText() {
     setState(() {
@@ -261,19 +260,19 @@ class _SignUpScreenState extends State<SignUpScreen> {
         password.isNotEmpty &&
         name.isNotEmpty &&
         phone.isNotEmpty) {
-      Map<String, dynamic> _postData = {
+      Map<String, dynamic> postData = {
         "name": name,
         "phone": phone,
         "email": email,
         "password": password
       };
       debugPrint("************");
-      debugPrint(_postData.toString());
+      debugPrint(postData.toString());
       debugPrint("************");
 
-      /// Post Data for Registration
+      /// API Post Data for Registration
       Future<RegistrationModel> output =
-          _apiService.patientRegistration(_postData);
+          _apiService.patientRegistration(postData);
       debugPrint("***** HTTP ----> *******");
       debugPrint(output.toString());
       debugPrint("***** HTTP ----> *******");

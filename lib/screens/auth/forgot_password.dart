@@ -148,9 +148,9 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                       ),
                     );
                   },
-                  child: Row(
+                  child: const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const <Widget>[
+                    children: <Widget>[
                       Icon(
                         Icons.arrow_back,
                         size: 16,
